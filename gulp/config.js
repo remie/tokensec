@@ -1,11 +1,18 @@
 module.exports = {
 	browserify: {
-		// A separate bundle will be generated for each
-		// bundle config in the list below
 		bundleConfigs: [{
 			entries: './src/tokensec.js',
 			dest: './dist',
-			outputName: 'tokensec.js'
+			outputName: 'tokensec-crypto.js'
+		},
+		{
+			entries: './dist/tokensec.min.js',
+			dest: './dist',
+			outputName: 'tokensec-crypto.min.js'
 		}]
 	},
+	uglify: {
+		src: './src/tokensec.js',
+		dest: './dist',
+	}
 }	
