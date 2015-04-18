@@ -43,7 +43,8 @@ app.get(/^\/tokensec.js/, restify.serveStatic({
 }));
 
 app.get(/^\/.*/, restify.serveStatic({
-	directory: __dirname + '/public'
+	directory: __dirname + '/public',
+	default: 'index.html'
 }));
 
 // ------------------------------------------------------------------------------------------ App Server Listener
