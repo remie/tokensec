@@ -1,0 +1,56 @@
+{
+  "name": "node-tokensec",
+  "version": "0.1.0",
+  "description": "Secure transport of (JWT) access tokens between browser & node.js server",
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/remie/node-tokensec.git"
+  },
+  "keywords": [
+    "browser",
+    "jwt",
+    "tokens",
+    "security",
+    "javascript"
+  ],
+  "dependencies": {
+    "crypto-js": "^3.1.4"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "csurf": "^1.8.0",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-task-loader": "^1.0.8",
+    "gulp-util": "^3.0.4",
+    "lodash": "^3.7.0",
+    "lodash.assign": "^3.1.0",
+    "merge-stream": "^0.1.7",
+    "nconf": "^0.7.1",
+    "node-static": "^0.7.6",
+    "require-dir": "^0.3.0",
+    "restify": "^3.0.2",
+    "restify-cookies": "^0.1.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.1.1"
+  },
+  "author": {
+    "name": "Remie Bolte",
+    "email": "remie@remiebolte.nl",
+    "url": "http://github.com/remie"
+  },
+  "license": "LGPLv3",
+  "bugs": {
+    "url": "https://github.com/remie/node-tokensec/issues"
+  },
+  "homepage": "https://github.com/remie/node-tokensec",
+  "maintainers": [
+    {
+      "name": "Remie Bolte",
+      "email": "remie@remiebolte.nl"
+    }
+  ]
+}
