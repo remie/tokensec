@@ -24,13 +24,7 @@ app.use(csrf({ cookie: {
 
 // For this example, we are putting the csrfToken in a cookie to be accessible on the client
 // Please consider other means to transport the token to your client application (i.e. injection in html templates)
-app.use(function(req, res, next) {
-	res.setCookie('tokensec', req.csrfToken(), {
-		httpOnly: false,
-		path: '/'
-	});
-	next();
-});
+app.use(tokenSec.initialize({ cookie: true }));
 
 // ------------------------------------------------------------------------------------------ App Server Routes
 
@@ -38,9 +32,7 @@ app.use(function(req, res, next) {
 app.post(/^\/.*/, tokenSec.handshake({ payload: 'MyVerySpecialSecretToken', terminate: true }));
 
 // Serve the client-side application
-app.get(/^\/tokensec.js/, restify.serveStatic({
-	directory: './dist'
-}));
+app.get(/^\/tokensec.js/, tokenSec.client({ crypto: true }));
 
 app.get(/^\/.*/, restify.serveStatic({
 	directory: __dirname + '/public',
