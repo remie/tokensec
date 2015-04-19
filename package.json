@@ -1,11 +1,11 @@
 {
-  "name": "node-tokensec",
+  "name": "tokensec",
   "version": "0.1.0",
   "description": "Secure transport of (JWT) access tokens between browser & node.js server",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/remie/node-tokensec.git"
+    "url": "http://github.com/remie/tokensec.git"
   },
   "keywords": [
     "browser",
@@ -47,9 +47,9 @@
   },
   "license": "LGPLv3",
   "bugs": {
-    "url": "https://github.com/remie/node-tokensec/issues"
+    "url": "https://github.com/remie/tokensec/issues"
   },
-  "homepage": "https://github.com/remie/node-tokensec",
+  "homepage": "https://github.com/remie/tokensec",
   "maintainers": [
     {
       "name": "Remie Bolte",
