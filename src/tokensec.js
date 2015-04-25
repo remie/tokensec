@@ -72,8 +72,12 @@ if ( typeof require === "function" && !require.isBrowser) {
 		xhr.onload = function() {
 			if (xhr.status === 200) {
 				var _envelop = xhr.getResponseHeader(_header);
-				var _payload = CryptoJS.AES.decrypt(_envelop, _token.toString());
-				done(_payload.toString(CryptoJS.enc.Utf8));
+				if(_envelop) {
+					var _payload = CryptoJS.AES.decrypt(_envelop, _token.toString());
+					done(_payload.toString(CryptoJS.enc.Utf8));
+				} else {
+					done();
+				}
 			} else {
 				throw new Error('The TokenSec handshake request failed with return status ' + xhr.status);
 			}
