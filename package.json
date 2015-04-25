@@ -1,6 +1,6 @@
 {
   "name": "tokensec",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Secure transport of (JWT) access tokens between browser & node.js server",
   "main": "./lib/index.js",
   "repository": {
