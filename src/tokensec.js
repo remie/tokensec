@@ -1,6 +1,6 @@
 
 // Include crypto-js when creating full version using Browserify
-if ( typeof require === "function" ) {
+if ( typeof require === "function" && !require.isBrowser) {
 	var CryptoJS = require('crypto-js');
 }
 
