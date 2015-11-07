@@ -61,12 +61,19 @@ if ( typeof require === "function" && !require.isBrowser) {
 		var _secret = options.secret || _csrf;
 		var _salt = options.salt || "TokenSec";
 		var _header = options.header || 'x-tokensec-handshake';
+		var _headers = options.headers || [];
+		var _method = options.method || 'POST';
 		var _token = tokenGenerator(_secret, _salt);
 
-		xhr.open('POST', encodeURI(_uri));
+		xhr.open(_method, encodeURI(_uri));
 		xhr.setRequestHeader(_header, _token);
 		if(_csrf) {
 			xhr.setRequestHeader('x-csrf-token', encodeURIComponent(_csrf));
+		}
+		for(var key in _headers) {
+			if (_headers.hasOwnProperty(key)) {
+				xhr.setRequestHeader(key, _headers[key]);
+			}
 		}
 
 		xhr.onload = function() {
